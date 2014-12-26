@@ -1,0 +1,72 @@
+.bite-container {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  font-family: 'PT Sans', Helvetica Neue, Arial, sans-serif;
+}
+
+.bite-container .bite-container-tabs {
+  display: block;
+  background: #3498db;
+  color: #fff;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.bite-container-tabs .right {
+  float: right;
+}
+
+.bite-container-tabs .bite-container-tab,
+.bite-container-tabs .bite-container-button,
+.bite-container-tabs label {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.bite-container .bite-container-tab {
+  text-transform: capitalize;
+}
+
+.bite-container .bite-container-tab:hover,
+.bite-container .bite-container-tab.active {
+  background: #2980b9;
+}
+
+.bite-container .bite-container-button {
+  background: #2ecc71;
+}
+
+.bite-container .bite-container-button:hover {
+  background: #27ae60;
+}
+
+.bite-container .bite-container-button#bite-clear {
+  background: #e74c3c;
+}
+
+.bite-container .bite-container-button#bite-clear:hover {
+  background: #c0392b;
+}
+
+.bite-container .bite-container-editor,
+.bite-container .bite-container-result {
+  display: block;
+  width: 100%;
+  min-height: 168px;
+  height: calc(100% - 32px);
+}
+
+.bite-container .bite-container-editor {
+  background: #2c3e50;
+}
+
+.bite-container .bite-container-result {
+  border: none;
+  display: none;
+}

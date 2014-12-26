@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles/bites.css">
+</head>
+<body>
+  <pre data-lang="html" data-group="testing"></pre>
+  <pre data-lang="js" data-group="testing"></pre>
+  <pre data-lang="rb" data-group="testing"></pre>
+  <script type="text/javascript" src="lib/ace/ace.js"></script>
+  <script data-main="lib/main" src="lib/require.js"></script>
+  <script>
+    if (requirejs) {
+      requirejs.config({
+        urlArgs: 'timestamp=' + Date.now()
+      });
+    }
+  </script>
+</body>
+</html>
