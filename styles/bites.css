@@ -30,7 +30,7 @@
 }
 
 .bite-container .bite-container-tab {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .bite-container .bite-container-tab:hover,
