@@ -2,7 +2,46 @@
 <html>
 <head>
   <title></title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="styles/bites.css">
+  <style type="text/css">
+    .embed-bite {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+      color: #555651;
+      text-decoration: none;
+      padding: 2px 8px;
+      font-family: 'PT Sans', Helvetica, sans-serif;
+      font-size: 0.85em;
+    }
+
+    .remove-bite {
+      position: absolute;
+      bottom: 0;
+      right: 100px;
+      background: #fff;
+      color: #c0392b;
+      text-decoration: none;
+      padding: 2px 8px;
+      font-family: 'PT Sans', Helvetica, sans-serif;
+      font-size: 0.85em;
+      border-top-left-radius: 3px;
+    }
+
+    .embed-testing {
+      background: #3498DB;
+    }
+
+    .embed-testing input {
+      display: block;
+      width: 35%;
+      margin: 20px auto;
+      font-size: 16px;
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
   <pre data-lang="html" data-group="testing"></pre>
@@ -19,6 +58,40 @@
         urlArgs: 'timestamp=' + Date.now()
       });
     }
+  </script>
+  <script type="text/javascript">
+    window.addEventListener('bite:ready', function(e) {
+      var group = e.detail.group;
+
+      var embedLink = document.createElement('a');
+      embedLink.className = 'embed-bite';
+      embedLink.href = '#';
+      embedLink.textContent = 'Compartir bite';
+
+      var removeBite = document.createElement('a');
+      removeBite.className = 'remove-bite';
+      removeBite.href = '#';
+      removeBite.dataset.id = 1;
+      removeBite.textContent = 'Eliminar bite';
+
+      group.addModal('embed', '<input type="text" placeholder="Copy link">');
+
+      group.addElement(embedLink, {
+        click: function(e) {
+          e.preventDefault();
+
+          group.showModal('embed');
+        }
+      });
+
+      group.addElement(removeBite, {
+        click: function(e) {
+          e.preventDefault();
+
+          alert('¿Eliminar bite #' + e.target.dataset.id + '?');
+        }
+      });
+    });
   </script>
 </body>
 </html>
