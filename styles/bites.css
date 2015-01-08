@@ -6,6 +6,10 @@
   font-family: 'PT Sans', Helvetica Neue, Arial, sans-serif;
 }
 
+.bite-container.with-live-preview {
+  /*min-height: 110px;*/
+}
+
 .bite-container .bite-container-tabs {
   display: block;
   background: #3498db;
@@ -50,7 +54,7 @@
 }
 
 .bite-container .bite-container-button#bite-clear {
-  background: #e74c3c;
+  background: #2c3e50;
 }
 
 .bite-container .bite-container-button#bite-clear:hover {
@@ -63,6 +67,26 @@
   width: 100%;
   min-height: 188px;
   height: calc(100% - 32px);
+}
+
+.bite-container.with-live-preview .bite-container-editor {
+  /*min-height: 94px;*/
+}
+
+.bite-container.with-live-preview .bite-container-result {
+  /*height: 33%;*/
+}
+
+.bite-container.with-live-preview .bite-container-log {
+  /*min-height: 50px;*/
+}
+
+.bite-container.with-live-preview .bite-container-editor,
+.bite-container.with-live-preview .bite-container-result,
+.bite-container.with-live-preview .bite-container-log {
+  height: calc(33% - 32px);
+  height: auto;
+  display: block;
 }
 
 .bite-container .bite-container-editor {
@@ -115,6 +139,7 @@
 }
 
 .bite-container-log {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
