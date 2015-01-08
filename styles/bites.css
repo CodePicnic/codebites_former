@@ -66,26 +66,22 @@
   display: block;
   width: 100%;
   min-height: 188px;
+}
+
+.bite-container .bite-container-editor {
   height: calc(100% - 32px);
 }
 
-.bite-container.with-live-preview .bite-container-editor {
-  /*min-height: 94px;*/
-}
-
-.bite-container.with-live-preview .bite-container-result {
-  /*height: 33%;*/
-}
-
-.bite-container.with-live-preview .bite-container-log {
-  /*min-height: 50px;*/
+.bite-container .bite-container-result,
+.bite-container .bite-container-log {
+  height: calc(50% - 32px);
 }
 
 .bite-container.with-live-preview .bite-container-editor,
 .bite-container.with-live-preview .bite-container-result,
 .bite-container.with-live-preview .bite-container-log {
   height: calc(33% - 32px);
-  height: auto;
+  min-height: initial;
   display: block;
 }
 
