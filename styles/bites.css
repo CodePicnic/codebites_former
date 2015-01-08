@@ -113,3 +113,53 @@
   display: inline-block;
   width: 20%;
 }
+
+.bite-container-log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.bite-container-log li {
+  padding: 5px;
+  border-bottom: solid 1px #95a5a6;
+}
+
+.bite-container-log li dl {
+  margin: 0;
+  padding: 0;
+}
+
+.bite-container-log li dt, .bite-container-log li dd {
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
+}
+
+.bite-container-log li dt {
+  color: #881391;
+}
+
+.bite-container-log li dd {
+  margin-left: 5px;
+}
+
+.bite-container-log .string,
+.bite-container-log .regexp {
+  color: #C41A16;
+}
+
+.bite-container-log .number,
+.bite-container-log .boolean {
+  color: #1C00CF;
+}
+
+.bite-container-log .null,
+.bite-container-log .undefined {
+  color: #808080;
+}
+
+.bite-container-log .html {
+  color: #881280;
+}
