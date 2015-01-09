@@ -124,14 +124,31 @@
   cursor: default;
 }
 
-.bite-container-add li:hover {
+.bite-container-modes-list li:hover,
+.bite-container-libraries-list ul li:hover {
   background: #34495e;
   color: #ecf0f1;
 }
 
 .bite-container-libraries-list li {
+  display: block;
+  width: 100%;
+}
+
+.bite-container-libraries-list ul {
+  display: block;
+  width: 100%;
+}
+
+.bite-container-libraries-list ul li {
   display: inline-block;
   width: 20%;
+}
+
+.bite-container-libraries-list ul li.used {
+  background: #34495e;
+  color: #ecf0f1;
+  opacity: 0.5;
 }
 
 .bite-container-log {
