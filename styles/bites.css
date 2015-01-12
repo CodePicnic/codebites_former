@@ -15,11 +15,15 @@
   background: #3498db;
   color: #fff;
   font-size: 14px;
-  height: 32px;
-  line-height: 32px;
+  overflow: hidden;
 }
 
-.bite-container-tabs .right {
+.bite-container-tabs .bite-container-tabs-left,
+.bite-container-tabs .bite-container-tabs-right {
+  display: inline-block;
+}
+
+.bite-container-tabs .bite-container-tabs-right {
   float: right;
 }
 
@@ -200,4 +204,12 @@
 
 .bite-container-log .html {
   color: #881280;
+}
+
+@media (max-width: 450px) {
+  .bite-container-tabs .bite-container-tabs-left,
+  .bite-container-tabs .bite-container-tabs-right {
+    display: inline-block;
+    float: none;
+  }
 }
