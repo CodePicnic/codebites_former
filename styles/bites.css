@@ -39,12 +39,30 @@
 }
 
 .bite-container .bite-container-tab {
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .bite-container .bite-container-tab:hover,
 .bite-container .bite-container-tab.active {
   background: #2980b9;
+}
+
+.bite-container .bite-container-remove-tab {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 17px;
+  text-align: center;
+  vertical-align: baseline;
+  margin-left: 10px;
+  opacity: 0.2;
+}
+
+.bite-container .bite-container-remove-tab:hover {
+  opacity: 1;
+  border-radius: 16px;
+  color: #2980b9;
+  background: #ffffff;
 }
 
 .bite-container .bite-container-button,
@@ -146,7 +164,7 @@
 
 .bite-container-libraries-list ul li {
   display: inline-block;
-  width: 20%;
+  width: 10%;
 }
 
 .bite-container-libraries-list ul li.used {
