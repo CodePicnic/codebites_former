@@ -92,6 +92,7 @@
 
 .bite-container .bite-container-editor {
   height: calc(100% - 32px);
+  z-index: 2;
 }
 
 .bite-container .bite-container-result,
@@ -108,7 +109,7 @@
 }
 
 .bite-container .bite-container-editor {
-  background: #2c3e50;
+  background: #1c2834;
 }
 
 .bite-container .bite-container-result {
@@ -124,6 +125,11 @@
   height: calc(100% - 32px);
   z-index: 1001;
   overflow: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .bite-container-add {
