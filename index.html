@@ -44,7 +44,7 @@
   </style>
 </head>
 <body>
-  <pre data-lang="js" data-group="testing"></pre>
+  <pre data-lang="rb" data-group="testing"></pre>
   <!--<pre data-lang="css" data-group="testing"></pre>
   <pre data-lang="js" data-group="testing"></pre>
   <pre data-lang="coffee" data-group="testing"></pre>
@@ -58,40 +58,6 @@
         urlArgs: 'timestamp=' + Date.now()
       });
     }
-  </script>
-  <script type="text/javascript">
-    window.addEventListener('bite:ready', function(e) {
-      var group = e.detail.group;
-
-      var embedLink = document.createElement('a');
-      embedLink.className = 'embed-bite';
-      embedLink.href = '#';
-      embedLink.textContent = 'Compartir bite';
-
-      var removeBite = document.createElement('a');
-      removeBite.className = 'remove-bite';
-      removeBite.href = '#';
-      removeBite.dataset.id = 1;
-      removeBite.textContent = 'Eliminar bite';
-
-      group.addModal('embed', '<input type="text" placeholder="Copy link">');
-
-      group.addElement(embedLink, {
-        click: function(e) {
-          e.preventDefault();
-
-          group.showModal('embed');
-        }
-      });
-
-      group.addElement(removeBite, {
-        click: function(e) {
-          e.preventDefault();
-
-          alert('¿Eliminar bite #' + e.target.dataset.id + '?');
-        }
-      });
-    });
   </script>
 </body>
 </html>

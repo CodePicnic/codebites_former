@@ -10,6 +10,117 @@
   /*min-height: 110px;*/
 }
 
+.bite-container-sidebar-container,
+.bite-container-content {
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
+}
+
+.bite-container-sidebar-container {
+  display: none;
+  background: rgb(211, 218, 227);
+  font-size: 14px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bite-container-sidebar {
+  margin: 0;
+  overflow: auto;
+  height: calc(100% - 32px);
+}
+
+.bite-container.with-sidebar .bite-container-sidebar-container {
+  width: 200px;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.bite-container-sidebar > *,
+.bite-container-sidebar dl {
+  margin: 2px 0 2px 15px;
+}
+
+.bite-container-sidebar dl > dd {
+  margin: 2px 0 2px 30px;
+}
+
+.bite-container-sidebar dt,
+.bite-container-sidebar dd {
+  cursor: default;
+}
+
+.bite-container-sidebar dd.file {
+  cursor: pointer;
+}
+
+.bite-container-sidebar dl > dt {
+  margin: 0;
+}
+
+.bite-container-sidebar dd.active {
+  font-weight: bold;
+}
+
+.bite-container-sidebar dl.collapsed > *:not(dt) {
+  display: none;
+}
+
+.bite-container-sidebar dl.collapsed dt:before {
+  color: #a6aeb4;
+  font-style: normal;
+  font-size: 10px;
+  content: "▶";
+  margin-right: 5px;
+}
+
+.bite-container-sidebar dl dt:before {
+  color: #a6aeb4;
+  font-style: normal;
+  font-size: 10px;
+  content: "▼";
+  margin-right: 5px;
+}
+
+.bite-container-sidebar * {
+  position: relative;
+}
+
+.bite-container-sidebar dd:hover,
+.bite-container-sidebar dt:hover {
+  text-shadow: 1px 1px 0 #a6aeb4;
+}
+
+.bite-container-sidebar dd:hover::after,
+.bite-container-sidebar dt:hover::after,
+.bite-container-sidebar .active::after {
+  content: "";
+  background-color: rgba(44, 62, 80, 0.2);
+  position: absolute;
+  left: -100px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.bite-container-sidebar .active::after {
+  background-color: rgba(41, 128, 185, 0.2);
+}
+
+.bite-container-content {
+  width: 100%;
+}
+
+.bite-container.with-sidebar .bite-container-content {
+  width: calc(100% - 200px);
+}
+
 .bite-container .bite-container-tabs {
   display: block;
   background: #3498db;
@@ -25,6 +136,7 @@
 
 .bite-container-tabs .bite-container-tabs-right {
   float: right;
+  text-align: right;
 }
 
 .bite-container-tabs .bite-container-tab,
@@ -83,27 +195,76 @@
   background: #c0392b;
 }
 
-.bite-container .bite-container-editor,
-.bite-container .bite-container-result {
-  display: block;
+.bite-container-tabpages {
+  display: table;
   width: 100%;
   min-height: 188px;
+  height: calc(100% - 37px);
+}
+
+.bite-container-tabpages > * {
+  display: table;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.bite-container .bite-container-editor,
+.bite-container .bite-container-result-container,
+.bite-container .bite-container-result,
+.bite-container .bite-container-result-location-bar {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bite-container .bite-container-result-location-bar {
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+.bite-container.with-location-bar .bite-container-result-location-bar {
+  display: block;
+  height: 20px;
+  flex-shrink: 0;
+  padding: 2px;
+  border: solid 1px #ccc;
+}
+
+.bite-container .bite-container-result-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bite-container .bite-container-result {
+  border: none;
+  height: 100%;
+  background: #fff;
 }
 
 .bite-container .bite-container-editor {
-  height: calc(100% - 32px);
+  height: 100%;
   z-index: 2;
 }
 
-.bite-container .bite-container-result,
+.bite-container .bite-container-result-container,
 .bite-container .bite-container-log {
-  height: calc(50% - 32px);
+  height: 50%;
+}
+
+.bite-container .bite-container-result-container.full,
+.bite-container .bite-container-log.full {
+  height: 100%;
 }
 
 .bite-container.with-live-preview .bite-container-editor,
-.bite-container.with-live-preview .bite-container-result,
+.bite-container.with-live-preview .bite-container-result-container,
 .bite-container.with-live-preview .bite-container-log {
-  height: calc(33% - 32px);
+  height: 33%;
   min-height: initial;
   display: block;
 }
@@ -112,7 +273,7 @@
   background: #1c2834;
 }
 
-.bite-container .bite-container-result {
+.bite-container .bite-container-result-container {
   border: none;
   display: none;
 }
@@ -185,11 +346,17 @@
   margin: 0;
   padding: 0;
   font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  overflow: auto;
 }
 
 .bite-container-log li {
   padding: 5px;
   border-bottom: solid 1px #95a5a6;
+  background: #fffffff;
+}
+
+.bite-container-log li.old {
+  background: #f3f5f5;
 }
 
 .bite-container-log li dl {
@@ -205,6 +372,7 @@
 
 .bite-container-log li dt {
   color: #881391;
+  cursor: pointer;
 }
 
 .bite-container-log li dd {
